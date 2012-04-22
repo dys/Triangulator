@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Triangulator' target in the 'Triangulator' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif

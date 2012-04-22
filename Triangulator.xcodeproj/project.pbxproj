@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D48FE7641543AF5900CE438E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48FE7631543AF5900CE438E /* Cocoa.framework */; };
+		D48FE76E1543AF5900CE438E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D48FE76C1543AF5900CE438E /* InfoPlist.strings */; };
+		D48FE7701543AF5900CE438E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE76F1543AF5900CE438E /* main.m */; };
+		D48FE7741543AF5900CE438E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D48FE7721543AF5900CE438E /* Credits.rtf */; };
+		D48FE7771543AF5900CE438E /* DYSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE7761543AF5900CE438E /* DYSAppDelegate.m */; };
+		D48FE77A1543AF5900CE438E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48FE7781543AF5900CE438E /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D48FE75F1543AF5900CE438E /* Triangulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48FE7631543AF5900CE438E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D48FE7661543AF5900CE438E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D48FE7671543AF5900CE438E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D48FE7681543AF5900CE438E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D48FE76B1543AF5900CE438E /* Triangulator-Info.plist */ = {isa = PBXFileReference; path = "Triangulator-Info.plist"; sourceTree = "<group>"; };
+		D48FE76D1543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D48FE76F1543AF5900CE438E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D48FE7711543AF5900CE438E /* Triangulator-Prefix.pch */ = {isa = PBXFileReference; path = "Triangulator-Prefix.pch"; sourceTree = "<group>"; };
+		D48FE7731543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D48FE7751543AF5900CE438E /* DYSAppDelegate.h */ = {isa = PBXFileReference; path = DYSAppDelegate.h; sourceTree = "<group>"; };
+		D48FE7761543AF5900CE438E /* DYSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYSAppDelegate.m; sourceTree = "<group>"; };
+		D48FE7791543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D48FE75C1543AF5900CE438E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48FE7641543AF5900CE438E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D48FE7541543AF5900CE438E = {
+			isa = PBXGroup;
+			children = (
+				D48FE7691543AF5900CE438E /* Triangulator */,
+				D48FE7621543AF5900CE438E /* Frameworks */,
+				D48FE7601543AF5900CE438E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D48FE7601543AF5900CE438E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D48FE75F1543AF5900CE438E /* Triangulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D48FE7621543AF5900CE438E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D48FE7631543AF5900CE438E /* Cocoa.framework */,
+				D48FE7651543AF5900CE438E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D48FE7651543AF5900CE438E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D48FE7661543AF5900CE438E /* AppKit.framework */,
+				D48FE7671543AF5900CE438E /* CoreData.framework */,
+				D48FE7681543AF5900CE438E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D48FE7691543AF5900CE438E /* Triangulator */ = {
+			isa = PBXGroup;
+			children = (
+				D48FE7751543AF5900CE438E /* DYSAppDelegate.h */,
+				D48FE7761543AF5900CE438E /* DYSAppDelegate.m */,
+				D48FE7781543AF5900CE438E /* MainMenu.xib */,
+				D48FE76A1543AF5900CE438E /* Supporting Files */,
+			);
+			path = Triangulator;
+			sourceTree = "<group>";
+		};
+		D48FE76A1543AF5900CE438E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D48FE76B1543AF5900CE438E /* Triangulator-Info.plist */,
+				D48FE76C1543AF5900CE438E /* InfoPlist.strings */,
+				D48FE76F1543AF5900CE438E /* main.m */,
+				D48FE7711543AF5900CE438E /* Triangulator-Prefix.pch */,
+				D48FE7721543AF5900CE438E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D48FE75E1543AF5900CE438E /* Triangulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48FE77D1543AF5900CE438E /* Build configuration list for PBXNativeTarget "Triangulator" */;
+			buildPhases = (
+				D48FE75B1543AF5900CE438E /* Sources */,
+				D48FE75C1543AF5900CE438E /* Frameworks */,
+				D48FE75D1543AF5900CE438E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Triangulator;
+			productName = Triangulator;
+			productReference = D48FE75F1543AF5900CE438E /* Triangulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D48FE7561543AF5900CE438E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DYS;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Black Pixel";
+			};
+			buildConfigurationList = D48FE7591543AF5900CE438E /* Build configuration list for PBXProject "Triangulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D48FE7541543AF5900CE438E;
+			productRefGroup = D48FE7601543AF5900CE438E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D48FE75E1543AF5900CE438E /* Triangulator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D48FE75D1543AF5900CE438E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48FE76E1543AF5900CE438E /* InfoPlist.strings in Resources */,
+				D48FE7741543AF5900CE438E /* Credits.rtf in Resources */,
+				D48FE77A1543AF5900CE438E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D48FE75B1543AF5900CE438E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48FE7701543AF5900CE438E /* main.m in Sources */,
+				D48FE7771543AF5900CE438E /* DYSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D48FE76C1543AF5900CE438E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48FE76D1543AF5900CE438E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D48FE7721543AF5900CE438E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48FE7731543AF5900CE438E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D48FE7781543AF5900CE438E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48FE7791543AF5900CE438E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D48FE77B1543AF5900CE438E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D48FE77C1543AF5900CE438E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D48FE77E1543AF5900CE438E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Triangulator/Triangulator-Prefix.pch";
+				INFOPLIST_FILE = "Triangulator/Triangulator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D48FE77F1543AF5900CE438E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Triangulator/Triangulator-Prefix.pch";
+				INFOPLIST_FILE = "Triangulator/Triangulator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D48FE7591543AF5900CE438E /* Build configuration list for PBXProject "Triangulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48FE77B1543AF5900CE438E /* Debug */,
+				D48FE77C1543AF5900CE438E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D48FE77D1543AF5900CE438E /* Build configuration list for PBXNativeTarget "Triangulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48FE77E1543AF5900CE438E /* Debug */,
+				D48FE77F1543AF5900CE438E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D48FE7561543AF5900CE438E /* Project object */;
+}
