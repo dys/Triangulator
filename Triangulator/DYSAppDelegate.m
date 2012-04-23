@@ -19,7 +19,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	NSError *error = nil;
-	if(![[self.window.contentView dataWithPDFInsideRect:[self.window.contentView frame]] writeToFile:@"/Users/rob/Desktop/dys4ik.pdf" options:NSDataWritingAtomic error:&error]) {
+	if(![[self.window.contentView dataWithPDFInsideRect:[self.window.contentView frame]] writeToFile:@"~/Desktop/dys4ik.pdf".stringByExpandingTildeInPath options:NSDataWritingAtomic error:&error]) {
 		NSLog(@"couldn’t write: %@", error);
 	}
 }
