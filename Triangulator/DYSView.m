@@ -10,6 +10,11 @@
 
 @implementation DYSView
 
+-(BOOL)isOpaque {
+	return NO;
+}
+
+
 static CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
 	return (CGPoint){
 		(b.x - a.x) * interval + a.x,
@@ -28,9 +33,9 @@ static CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 static const CGFloat kDYSRadius = 450.;
 
 -(void)drawRect:(NSRect)dirtyRect {
-	[[NSColor clearColor] set];
+	[[NSColor clearColor] setFill];
 	CGRect frame = self.frame;
-	NSRectFill(frame);
+	[[NSBezierPath bezierPathWithRect:frame] fill];
 	
 	NSAffineTransform *rotation = [NSAffineTransform transform];
 	[rotation rotateByDegrees:120];
