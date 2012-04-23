@@ -1,5 +1,5 @@
 //
-//  DYSAppDelegate.h
+//  DYSView.h
 //  Triangulator
 //
 //  Created by Rob Rix on 12-04-21.
@@ -8,5 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DYSAppDelegate : NSObject <NSApplicationDelegate>
+@interface DYSView : NSView
+
 @end

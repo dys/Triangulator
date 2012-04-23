@@ -13,6 +13,7 @@
 		D48FE7741543AF5900CE438E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D48FE7721543AF5900CE438E /* Credits.rtf */; };
 		D48FE7771543AF5900CE438E /* DYSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE7761543AF5900CE438E /* DYSAppDelegate.m */; };
 		D48FE77A1543AF5900CE438E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48FE7781543AF5900CE438E /* MainMenu.xib */; };
+		D48FE7861543B27600CE438E /* DYSView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE7851543B27600CE438E /* DYSView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +22,16 @@
 		D48FE7661543AF5900CE438E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D48FE7671543AF5900CE438E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D48FE7681543AF5900CE438E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D48FE76B1543AF5900CE438E /* Triangulator-Info.plist */ = {isa = PBXFileReference; path = "Triangulator-Info.plist"; sourceTree = "<group>"; };
+		D48FE76B1543AF5900CE438E /* Triangulator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Triangulator-Info.plist"; sourceTree = "<group>"; };
 		D48FE76D1543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D48FE76F1543AF5900CE438E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D48FE7711543AF5900CE438E /* Triangulator-Prefix.pch */ = {isa = PBXFileReference; path = "Triangulator-Prefix.pch"; sourceTree = "<group>"; };
+		D48FE7711543AF5900CE438E /* Triangulator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Triangulator-Prefix.pch"; sourceTree = "<group>"; };
 		D48FE7731543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D48FE7751543AF5900CE438E /* DYSAppDelegate.h */ = {isa = PBXFileReference; path = DYSAppDelegate.h; sourceTree = "<group>"; };
+		D48FE7751543AF5900CE438E /* DYSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYSAppDelegate.h; sourceTree = "<group>"; };
 		D48FE7761543AF5900CE438E /* DYSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYSAppDelegate.m; sourceTree = "<group>"; };
 		D48FE7791543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D48FE7841543B27600CE438E /* DYSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSView.h; sourceTree = "<group>"; };
+		D48FE7851543B27600CE438E /* DYSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		D48FE7691543AF5900CE438E /* Triangulator */ = {
 			isa = PBXGroup;
 			children = (
+				D48FE7841543B27600CE438E /* DYSView.h */,
+				D48FE7851543B27600CE438E /* DYSView.m */,
 				D48FE7751543AF5900CE438E /* DYSAppDelegate.h */,
 				D48FE7761543AF5900CE438E /* DYSAppDelegate.m */,
 				D48FE7781543AF5900CE438E /* MainMenu.xib */,
@@ -169,6 +174,7 @@
 			files = (
 				D48FE7701543AF5900CE438E /* main.m in Sources */,
 				D48FE7771543AF5900CE438E /* DYSAppDelegate.m in Sources */,
+				D48FE7861543B27600CE438E /* DYSView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +296,7 @@
 				D48FE77F1543AF5900CE438E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,13 +8,20 @@
 
 #import "DYSAppDelegate.h"
 
+@interface DYSAppDelegate ()
+@property (strong) NSWindow *window;
+@end
+
 @implementation DYSAppDelegate
 
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
+	NSError *error = nil;
+	if(![[self.window.contentView dataWithPDFInsideRect:[self.window.contentView frame]] writeToFile:@"/Users/rob/Desktop/dys4ik.pdf" options:NSDataWritingAtomic error:&error]) {
+		NSLog(@"couldn’t write: %@", error);
+	}
 }
 
 @end
