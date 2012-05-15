@@ -1,0 +1,26 @@
+I’ve been doing a lot of drawing in code lately, and it occurred to me that your symbol is an interesting test. So, I wrote an app to draw it (and also export it as a PDF to your desktop on every launch :P ).
+
+
+Git history included.
+
+I faked a couple of things—ad hoc’d the size of the gap at the edges, and did an even worse ad hoc guess at the distance between the midpoint and the top point in the centre, so the gaps aren’t quite parallel like they should be (derive the relationship between edge length and radius in an equilateral triangle to fix this; it may help to note that the circle for which midpoint-vertex is a radius is also the circumscribing circle, and thus the edges of the triangles form chords of 120°). I also guessed at placement of the triangle within the square (the view’s frame), and of the proportions of the triangle (remembering that by Pythagoras the edges of the triangle necessarily take up less width than the view).
+
+But I didn’t do the cheap thing and just draw lines from the midpoint of the triangle to the midpoints of the edges—that would be lame!
+
+It works pretty simply: find the top point, and the lower right point. Using that line segment, figure out where the right point of one black piece is. Mirror that to make the left point. Fake the lower point. Make a path with all of that, then rotate it 120°, and again. Translate the whole thing into (roughly) the centre of the view.
+
+Some fun things to try: make it able to build a single path based on a desired edge length. Make it able to build a single path based on the minimum of (width, height) of a view, and always fit that triangle properly within the view (without distorting it). Then make it handle window resizes properly (I haven’t tried it so I don’t know how it fails, I just guess that it does). Then implement fullscreen support and resume support so it’s a good 10.7 citizen. Make it print the view (including printing to PDF) instead of writing a PDF to the desktop every launch.
+
+Have fun!
+
+Rob
+
+
+=================
+TODO
+=================
+
+- build a single path given an edge length, must fit into window
+- resize triangle when window resizes
+- fullscreen and resume on 10.7 (low priority)
+- port to iOS (higher priority)
