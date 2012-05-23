@@ -27,9 +27,10 @@ CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
 }
 
 CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
-    NSAffineTransform *translate = [NSAffineTransform transform];
-    [translate translateXBy:x yBy:y];
-    return [translate transformPoint:point];
+	return (CGPoint){
+		point.x + x,
+		point.y + y
+	};
 }
 
 CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
