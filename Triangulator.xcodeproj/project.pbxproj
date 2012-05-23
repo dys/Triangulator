@@ -15,7 +15,21 @@
 		D48FE7771543AF5900CE438E /* DYSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE7761543AF5900CE438E /* DYSAppDelegate.m */; };
 		D48FE77A1543AF5900CE438E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48FE7781543AF5900CE438E /* MainMenu.xib */; };
 		D48FE7861543B27600CE438E /* DYSView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FE7851543B27600CE438E /* DYSView.m */; };
+		D4D93AC2156CAF460060FF61 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D93AC1156CAF460060FF61 /* SenTestingKit.framework */; };
+		D4D93AC3156CAF460060FF61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48FE7631543AF5900CE438E /* Cocoa.framework */; };
+		D4D93AC9156CAF460060FF61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4D93AC7156CAF460060FF61 /* InfoPlist.strings */; };
+		D4D93AED156CAF8E0060FF61 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D93ADB156CAF8E0060FF61 /* RXAssertions.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4D93AD2156CAF6C0060FF61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D48FE7561543AF5900CE438E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D48FE75E1543AF5900CE438E;
+			remoteInfo = Triangulator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D3E7BF30156315590046E50C /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
@@ -34,6 +48,13 @@
 		D48FE7791543AF5900CE438E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D48FE7841543B27600CE438E /* DYSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSView.h; sourceTree = "<group>"; };
 		D48FE7851543B27600CE438E /* DYSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSView.m; sourceTree = "<group>"; };
+		D4D93AC0156CAF460060FF61 /* TriangulatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriangulatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D93AC1156CAF460060FF61 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4D93AC6156CAF460060FF61 /* TriangulatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TriangulatorTests-Info.plist"; sourceTree = "<group>"; };
+		D4D93AC8156CAF460060FF61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4D93ACD156CAF460060FF61 /* TriangulatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangulatorTests-Prefix.pch"; sourceTree = "<group>"; };
+		D4D93ADA156CAF8E0060FF61 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
+		D4D93ADB156CAF8E0060FF61 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +66,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4D93ABC156CAF460060FF61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D93AC2156CAF460060FF61 /* SenTestingKit.framework in Frameworks */,
+				D4D93AC3156CAF460060FF61 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				D48FE7691543AF5900CE438E /* Triangulator */,
+				D4D93AC4156CAF460060FF61 /* TriangulatorTests */,
+				D4D93AD4156CAF8E0060FF61 /* External */,
 				D48FE7621543AF5900CE438E /* Frameworks */,
 				D48FE7601543AF5900CE438E /* Products */,
 			);
@@ -61,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D48FE75F1543AF5900CE438E /* Triangulator.app */,
+				D4D93AC0156CAF460060FF61 /* TriangulatorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D48FE7631543AF5900CE438E /* Cocoa.framework */,
+				D4D93AC1156CAF460060FF61 /* SenTestingKit.framework */,
 				D48FE7651543AF5900CE438E /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -110,6 +144,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D4D93AC4156CAF460060FF61 /* TriangulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D93AC5156CAF460060FF61 /* Supporting Files */,
+			);
+			path = TriangulatorTests;
+			sourceTree = "<group>";
+		};
+		D4D93AC5156CAF460060FF61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4D93AC6156CAF460060FF61 /* TriangulatorTests-Info.plist */,
+				D4D93AC7156CAF460060FF61 /* InfoPlist.strings */,
+				D4D93ACD156CAF460060FF61 /* TriangulatorTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4D93AD4156CAF8E0060FF61 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D4D93AD5156CAF8E0060FF61 /* RXAssertions */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D4D93AD5156CAF8E0060FF61 /* RXAssertions */ = {
+			isa = PBXGroup;
+			children = (
+				D4D93ADA156CAF8E0060FF61 /* RXAssertions.h */,
+				D4D93ADB156CAF8E0060FF61 /* RXAssertions.m */,
+			);
+			path = RXAssertions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +198,25 @@
 			productName = Triangulator;
 			productReference = D48FE75F1543AF5900CE438E /* Triangulator.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D4D93ABF156CAF460060FF61 /* TriangulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4D93AD0156CAF460060FF61 /* Build configuration list for PBXNativeTarget "TriangulatorTests" */;
+			buildPhases = (
+				D4D93ABB156CAF460060FF61 /* Sources */,
+				D4D93ABC156CAF460060FF61 /* Frameworks */,
+				D4D93ABD156CAF460060FF61 /* Resources */,
+				D4D93ABE156CAF460060FF61 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4D93AD3156CAF6C0060FF61 /* PBXTargetDependency */,
+			);
+			name = TriangulatorTests;
+			productName = TriangulatorTests;
+			productReference = D4D93AC0156CAF460060FF61 /* TriangulatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -153,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				D48FE75E1543AF5900CE438E /* Triangulator */,
+				D4D93ABF156CAF460060FF61 /* TriangulatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -169,7 +258,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4D93ABD156CAF460060FF61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D93AC9156CAF460060FF61 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4D93ABE156CAF460060FF61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D48FE75B1543AF5900CE438E /* Sources */ = {
@@ -182,7 +295,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4D93ABB156CAF460060FF61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D93AED156CAF8E0060FF61 /* RXAssertions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4D93AD3156CAF6C0060FF61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D48FE75E1543AF5900CE438E /* Triangulator */;
+			targetProxy = D4D93AD2156CAF6C0060FF61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D48FE76C1543AF5900CE438E /* InfoPlist.strings */ = {
@@ -207,6 +336,14 @@
 				D48FE7791543AF5900CE438E /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D4D93AC7156CAF460060FF61 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4D93AC8156CAF460060FF61 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,6 +418,34 @@
 			};
 			name = Release;
 		};
+		D4D93ACE156CAF460060FF61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Triangulator.app/Contents/MacOS/Triangulator";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TriangulatorTests/TriangulatorTests-Prefix.pch";
+				INFOPLIST_FILE = "TriangulatorTests/TriangulatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4D93ACF156CAF460060FF61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Triangulator.app/Contents/MacOS/Triangulator";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TriangulatorTests/TriangulatorTests-Prefix.pch";
+				INFOPLIST_FILE = "TriangulatorTests/TriangulatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -301,6 +466,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D4D93AD0156CAF460060FF61 /* Build configuration list for PBXNativeTarget "TriangulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4D93ACE156CAF460060FF61 /* Debug */,
+				D4D93ACF156CAF460060FF61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
