@@ -42,9 +42,14 @@ CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 }
 
 static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat height) {
-    // slice diamond leaf vertically giving a 30-90-60 triangle, slice that horizontally and you get another 30-90-60 triangle.
-    CGFloat corner_offset_y = height / 4;
-    CGFloat corner_offset_x = (corner_offset_y * sin(DYSRadians(60))) / sin(DYSRadians(30));
+    // slice diamond leaf vertically giving a 30-90-60 ABC triangle (where b is height)
+    // slice that horizontally and you get another 30-90-60 DEF triangle (where d lies on b)
+    // the properties of these right-angle triangles are such that:
+        // the length b will be 1/2 of length c,
+        // the length d will be 1/2 of length b,
+        // therefore d is 1/4 height and we can calculate f = d sin F / sin D
+    CGFloat corner_offset_y = height / 4; // d
+    CGFloat corner_offset_x = (corner_offset_y * sin(DYSRadians(60))) / sin(DYSRadians(30)); // f
     CGPoint zero = {0, 0}; 
 
     NSBezierPath *path = [NSBezierPath new];
