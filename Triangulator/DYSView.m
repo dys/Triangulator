@@ -14,6 +14,10 @@
 	return NO;
 }
 
+static CGFloat DYSRadians(CGFloat degrees)
+{ 
+    return degrees * M_PI / 180.0; 
+}
 
 static CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
 	return (CGPoint){
@@ -30,39 +34,67 @@ static CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 	return sqrt(pow(translated.x, 2) + pow(translated.y, 2));
 }
 
-static const CGFloat kDYSRadius = 450.;
+static CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
+    NSAffineTransform *translate = [NSAffineTransform transform];
+    [translate translateXBy:x yBy:y];
+    return [translate transformPoint:point];
+}
+
+static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat height) {
+    // slice diamond leaf vertically giving a 30-90-60 triangle, slice that horizontally and you get another 30-90-60 triangle.
+    CGFloat corner_offset_y = height / 4;
+    CGFloat corner_offset_x = (corner_offset_y * sin(DYSRadians(60))) / sin(DYSRadians(30));
+    CGPoint zero = {0, 0}; 
+
+    NSBezierPath *path = [NSBezierPath new];
+    [path moveToPoint:zero];
+	[path lineToPoint:DYSTranslatePoint(zero, corner_offset_x, corner_offset_y)]; // right vertex
+	[path lineToPoint:DYSTranslatePoint(zero, 0, height)]; // top vertex
+    [path lineToPoint:DYSTranslatePoint(zero, -corner_offset_x, corner_offset_y)]; // left vertex
+	[path closePath];
+    
+    NSAffineTransform *rotation_from_90 = [NSAffineTransform transform];
+	[rotation_from_90 rotateByDegrees:offset_from_90];
+    
+    NSAffineTransform *move_to_origin = [NSAffineTransform transform];
+    [move_to_origin translateXBy:origin.x yBy:origin.y];
+    
+    NSAffineTransform *transform = [NSAffineTransform transform];
+    [transform appendTransform:rotation_from_90];
+    [transform appendTransform:move_to_origin];
+    
+    return [transform transformBezierPath:path];
+}
 
 -(void)drawRect:(NSRect)dirtyRect {
-	[[NSColor clearColor] setFill];
 	CGRect frame = self.frame;
-	[[NSBezierPath bezierPathWithRect:frame] fill];
-	
-	NSAffineTransform *rotation = [NSAffineTransform transform];
-	[rotation rotateByDegrees:120];
-	NSAffineTransform *translate = [NSAffineTransform transform];
-	[translate translateXBy:CGRectGetMidX(frame) yBy:350];
-	
-	NSBezierPath *path = [NSBezierPath new];
-	CGPoint topVertex = {0, kDYSRadius};
-	CGPoint lowerRightVertex = [rotation transformPoint:topVertex];
-	CGPoint lowerRightKiteVertex = DYSPointAtInterval(topVertex, lowerRightVertex, 0.5 - 30. / DYSLineSegmentLength(topVertex, lowerRightVertex));
-	CGPoint lowerLeftKiteVertex = {-lowerRightKiteVertex.x, lowerRightKiteVertex.y};
-	CGPoint lowerKiteVertex = {0, 34};
-	
-	[path moveToPoint:topVertex];
-	[path lineToPoint:lowerRightKiteVertex];
-	[path lineToPoint:lowerKiteVertex];
-	[path lineToPoint:lowerLeftKiteVertex];
-	[path closePath];
-	
-	NSBezierPath *a = [translate transformBezierPath:path];
-	NSBezierPath *b = [translate transformBezierPath:[rotation transformBezierPath:path]];
-	NSBezierPath *c = [translate transformBezierPath:[rotation transformBezierPath:[rotation transformBezierPath:path]]];
-	
-	[[NSColor blackColor] setFill];
-	[a fill];
-	[b fill];
-	[c fill];
+    CGFloat max = frame.size.width < frame.size.height ? frame.size.width : frame.size.height;
+    max = max / 3;
+    CGFloat gap_width = (max / 2) * .4;
+    CGFloat inner_radius = sqrt(pow(gap_width, 2) - pow(gap_width / 2, 2)) / 2;
+    CGFloat center_x = frame.size.width / 2;
+    CGFloat center_y = frame.size.height / 2;
+    
+    [[NSColor clearColor] setFill];
+    [[NSBezierPath bezierPathWithRect:frame] fill];
+    
+    // the three points of the invisible inner triangle
+    NSAffineTransform *rotate = [NSAffineTransform transform];
+	[rotate rotateByDegrees:120];
+    CGPoint topVertex = {0, inner_radius};
+    CGPoint rightVertex = [rotate transformPoint:topVertex];    
+    CGPoint leftVertex = [rotate transformPoint:rightVertex];
+    topVertex = DYSTranslatePoint(topVertex, center_x, center_y);
+    rightVertex = DYSTranslatePoint(rightVertex, center_x, center_y);
+    leftVertex = DYSTranslatePoint(leftVertex, center_x, center_y);
+    
+    NSBezierPath *path = [NSBezierPath new];
+    [path appendBezierPath:DYSDrawLeaf(topVertex, 0, max)];
+    [path appendBezierPath:DYSDrawLeaf(leftVertex, 240, max)];
+    [path appendBezierPath:DYSDrawLeaf(rightVertex, 120, max)];
+    
+    [[NSColor blackColor] setFill];
+    [path fill];
 }
 
 @end
