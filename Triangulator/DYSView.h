@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern CGFloat DYSRadians(CGFloat degrees);
+extern CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval);
+extern CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y);
+extern CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b);
+
 @interface DYSView : NSView
 
 @end

@@ -14,30 +14,30 @@
 	return NO;
 }
 
-static CGFloat DYSRadians(CGFloat degrees)
+CGFloat DYSRadians(CGFloat degrees)
 { 
     return degrees * M_PI / 180.0; 
 }
 
-static CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
+CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
 	return (CGPoint){
 		(b.x - a.x) * interval + a.x,
 		(b.y - a.y) * interval + a.y
 	};
 }
 
-static CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
+CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
+    NSAffineTransform *translate = [NSAffineTransform transform];
+    [translate translateXBy:x yBy:y];
+    return [translate transformPoint:point];
+}
+
+CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 	CGPoint translated = (CGPoint){
 		b.x - a.x,
 		b.y - a.y
 	};
 	return sqrt(pow(translated.x, 2) + pow(translated.y, 2));
-}
-
-static CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
-    NSAffineTransform *translate = [NSAffineTransform transform];
-    [translate translateXBy:x yBy:y];
-    return [translate transformPoint:point];
 }
 
 static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat height) {
