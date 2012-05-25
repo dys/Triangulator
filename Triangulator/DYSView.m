@@ -26,13 +26,6 @@ CGPoint DYSPointAtInterval(CGPoint a, CGPoint b, CGFloat interval) {
 	};
 }
 
-CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
-	return (CGPoint){
-		point.x + x,
-		point.y + y
-	};
-}
-
 CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 	CGPoint translated = (CGPoint){
 		b.x - a.x,
@@ -41,7 +34,26 @@ CGFloat DYSLineSegmentLength(CGPoint a, CGPoint b) {
 	return sqrt(pow(translated.x, 2) + pow(translated.y, 2));
 }
 
-static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat height) {
+CGPoint DYSTranslatePoint(CGPoint point, CGFloat x, CGFloat y) {
+	return (CGPoint){
+		point.x + x,
+		point.y + y
+	};
+}
+
+NSBezierPath *DYSMovePathToPoint(NSBezierPath *path, CGPoint destination) {
+    NSAffineTransform *move_to_point = [NSAffineTransform transform];
+    [move_to_point translateXBy:destination.x yBy:destination.y];
+    return [move_to_point transformBezierPath:path];
+}
+
+NSBezierPath *DYSRotatePathByDegrees(NSBezierPath *path, CGFloat degrees) {
+    NSAffineTransform *rotation = [NSAffineTransform transform];
+	[rotation rotateByDegrees:degrees];
+    return [rotation transformBezierPath:path];
+}
+
+static NSBezierPath *DYSDrawLeaf(CGFloat height) {
     // slice diamond leaf vertically giving a 30-90-60 ABC triangle (where b is height)
     // slice that horizontally and you get another 30-90-60 DEF triangle (where d lies on b)
     // the properties of these right-angle triangles are such that:
@@ -51,25 +63,13 @@ static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat
     CGFloat corner_offset_y = height / 4; // d
     CGFloat corner_offset_x = (corner_offset_y * sin(DYSRadians(60))) / sin(DYSRadians(30)); // f
     CGPoint zero = {0, 0}; 
-
     NSBezierPath *path = [NSBezierPath new];
     [path moveToPoint:zero];
 	[path lineToPoint:DYSTranslatePoint(zero, corner_offset_x, corner_offset_y)]; // right vertex
 	[path lineToPoint:DYSTranslatePoint(zero, 0, height)]; // top vertex
     [path lineToPoint:DYSTranslatePoint(zero, -corner_offset_x, corner_offset_y)]; // left vertex
 	[path closePath];
-    
-    NSAffineTransform *rotation_from_90 = [NSAffineTransform transform];
-	[rotation_from_90 rotateByDegrees:offset_from_90];
-    
-    NSAffineTransform *move_to_origin = [NSAffineTransform transform];
-    [move_to_origin translateXBy:origin.x yBy:origin.y];
-    
-    NSAffineTransform *transform = [NSAffineTransform transform];
-    [transform appendTransform:rotation_from_90];
-    [transform appendTransform:move_to_origin];
-    
-    return [transform transformBezierPath:path];
+    return path;
 }
 
 -(void)drawRect:(NSRect)dirtyRect {
@@ -95,9 +95,9 @@ static NSBezierPath *DYSDrawLeaf(CGPoint origin, CGFloat offset_from_90, CGFloat
     leftVertex = DYSTranslatePoint(leftVertex, center_x, center_y);
     
     NSBezierPath *path = [NSBezierPath new];
-    [path appendBezierPath:DYSDrawLeaf(topVertex, 0, max)];
-    [path appendBezierPath:DYSDrawLeaf(leftVertex, 240, max)];
-    [path appendBezierPath:DYSDrawLeaf(rightVertex, 120, max)];
+    [path appendBezierPath:DYSMovePathToPoint(DYSRotatePathByDegrees(DYSDrawLeaf(max), 0), topVertex)];
+    [path appendBezierPath:DYSMovePathToPoint(DYSRotatePathByDegrees(DYSDrawLeaf(max), 240), leftVertex)];
+    [path appendBezierPath:DYSMovePathToPoint(DYSRotatePathByDegrees(DYSDrawLeaf(max), 120), rightVertex)];
     
     [[NSColor blackColor] setFill];
     [path fill];
