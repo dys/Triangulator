@@ -49,4 +49,24 @@
 	RXAssertEquals(DYSLineSegmentLength(CGPointZero, (CGPoint){ 1, 1 }), M_SQRT2);
 }
 
+-(void)testRotatesPaths {
+    NSBezierPath *up = [NSBezierPath new];
+    NSBezierPath *right = [NSBezierPath new];
+    
+    CGPoint a = (CGPoint){0, 10};
+    CGPoint b = (CGPoint){0, 0};
+    CGPoint c = (CGPoint){10, 0};
+    
+    [up moveToPoint:a];
+    [up lineToPoint:b];
+    [up closePath];
+    
+    [up moveToPoint:b];
+    [up lineToPoint:c];
+    [up closePath];
+
+    RXAssertEquals(DYSRotatePathByDegrees(right, 90), up);
+    RXAssertEquals(DYSRotatePathByDegrees(up, -90), right);
+}
+
 @end
